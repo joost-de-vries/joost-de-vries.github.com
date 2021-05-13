@@ -1,26 +1,34 @@
-<section id="two" class="wrapper alt style2">
-
-	{% for post in site.posts limit:site.tiles-count %}{% if site.tiles-source == 'posts' %}
-
-	<section class="spotlight">
-		<div class="image">{% if post.image %}<img src="{% if site.featured-image-source %}{{ post.image | prepend: site.featured-image-source | absolute_url }}{% else %}{{ "" | absolute_url }}/assets/images/{{ post.image }}{% endif %}" alt="" />{% endif %}</div>
-		<div class="content">
-			<h2><a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a></h2>
-			<p>{{ post.description }}</p>
-		</div>
-	</section>
-
-	{% endif %}{% endfor %}
-	{% for page in site.pages limit:site.tiles-count %}{% if site.tiles-source == 'pages' %}{% if page.layout == 'default' %}{% continue %}{% endif %}
-
-	<section class="spotlight">
-		<div class="image">{% if page.image %}<img src="{% if site.featured-image-source %}{{ page.image | prepend: site.featured-image-source | absolute_url }}{% else %}{{ "" | absolute_url }}/assets/images/{{ page.image }}{% endif %}" alt="" />{% endif %}</div>
-		<div class="content">
-			<h2><a href="{{ page.url | relative_url }}" class="link">{{ page.title }}</a></h2>
-			<p>{{ page.description }}</p>
-		</div>
-	</section>
-
-	{% endif %}{% endfor %}
-
+<section id="two" class="wrapper style3 special">
+	<div class="inner">
+		<header class="major">
+			<h2>Points of view</h2>
+			<p>There are so many ways of looking at software development. Here are some of my points of view and beliefs.</p>
+		</header>
+		<ul class="features">
+			<li class="icon fa-paper-plane-o">
+				<h3>Functional programming</h3>
+				<p>With functional programming applications are <em>easier</em> to understand. Really. <span class="icon far fa-smile" /></p>
+			</li>
+			<li class="icon fa-laptop">
+				<h3>JVM</h3>
+				<p>The JVM is an amazing cloud platform for running applications. And the biggest <em>ecosystem</em> of libraries.</p>
+			</li>
+			<li class="icon fa-code">
+				<h3>Modern programming languages</h3>
+				<p>Type inferencing, nullable union types, pattern matching, extension methods. There's a better way of programming and you can use it right now in Scala, Kotlin and Typescript and be really productive.</p>
+			</li>
+			<li class="icon fa-headphones">
+				<h3>Collective learning</h3>
+				<p>By talking to colleagues, keeping up with blogs and twitter and github you can learn what other people learned from hard lived experience. Without the hard lived.</p>
+			</li>
+			<li class="icon fa-heart-o">
+				<h3>Seeing <em>through</em> microservices, application landscapes and business processes</h3>
+				<p>Programming code isn't the goal in itself. Nor are API's, microservices, servers. There's a way of not losing yourself in the technical details and seeing through the <em>matrix</em>. Seeing the bigger functional picture.</p>
+			</li>
+			<li class="icon fa-flag-o">
+				<h3>Sol Iustitiae Illustra Nos</h3>
+				<p>Because no website is complete without a bit of Lorem Ipsum Latin verbiage. Also, <em><a href="https://www.uu.nl/en/organisation/utrecht-university-hall/about-the-university-hall/history">Alma Mater</a>. I studied at Utrecht University.</em>.</p>
+			</li>
+		</ul>
+	</div>
 </section>

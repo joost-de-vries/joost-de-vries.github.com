@@ -1,35 +1,28 @@
 <!-- Three -->
-<section id="three" class="wrapper style3 special">
-	<div class="inner">
-		<header class="major">
-			<h2>Accumsan mus tortor nunc aliquet</h2>
-			<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br /> fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-		</header>
-		<ul class="features">
-			<li class="icon fa-paper-plane-o">
-				<h3>Arcu accumsan</h3>
-				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-			</li>
-			<li class="icon fa-laptop">
-				<h3>Ac Augue Eget</h3>
-				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-			</li>
-			<li class="icon fa-code">
-				<h3>Mus Scelerisque</h3>
-				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-			</li>
-			<li class="icon fa-headphones">
-				<h3>Mauris Imperdiet</h3>
-				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-			</li>
-			<li class="icon fa-heart-o">
-				<h3>Aenean Primis</h3>
-				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-			</li>
-			<li class="icon fa-flag-o">
-				<h3>Tortor Ut</h3>
-				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-			</li>
-		</ul>
-	</div>
+<section id="three" class="wrapper alt style2">
+
+	{% for post in site.posts limit:site.tiles-count %}{% if site.tiles-source == 'posts' %}
+
+	<section class="spotlight">
+		<div class="image">{% if post.image %}<img src="{% if site.featured-image-source %}{{ post.image | prepend: site.featured-image-source | absolute_url }}{% else %}{{ "" | absolute_url }}/assets/images/{{ post.image }}{% endif %}" alt="" />{% endif %}</div>
+		<div class="content">
+			<h2><a href="{{ post.url | relative_url }}" class="link">{{ post.title }}</a></h2>
+			<p>{{ post.description }}</p>
+		</div>
+	</section>
+
+	{% endif %}{% endfor %}
+	{% for page in site.pages limit:site.tiles-count %}{% if site.tiles-source == 'pages' %}{% if page.layout == 'default' %}{% continue %}{% endif %}
+
+	<section class="spotlight">
+		<div class="image">{% if page.image %}<img src="{% if site.featured-image-source %}{{ page.image | prepend: site.featured-image-source | absolute_url }}{% else %}{{ "" | absolute_url }}/assets/images/{{ page.image }}{% endif %}" alt="" />{% endif %}</div>
+		<div class="content">
+			<h2><a href="{{ page.url | relative_url }}" class="link">{{ page.title }}</a></h2>
+			<p>{{ page.description }}</p>
+		</div>
+	</section>
+
+	{% endif %}{% endfor %}
+
 </section>
+
