@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Curriculum vitæ
+title: Curriculum vitæ of Joost de Vries
 description: A quick overview of my resumé
 ---
 
