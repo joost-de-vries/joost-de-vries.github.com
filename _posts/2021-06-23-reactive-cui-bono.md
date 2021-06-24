@@ -5,7 +5,7 @@ description: Looking back at 8 years of reactive
 image: pic01.jpg
 ---
 
-Recently I experienced the _season_ at the biggest retail company of the Netherlands, bol.com. The season is the period in retail from black friday to christmas where people shop the most. It's when scaling and response times and availability really matter.  
+Recently I experienced the _season_ at one of the biggest retail company of the Netherlands. The season is the period in retail from black friday to christmas where people shop the most. It's when scaling and response times and availability really matter.  
 At the same time I've been following Scala and functional programming and the reactive manifesto since 2014. Which promises major benefits in those areas.  
 
 So I thought I'd reflect a bit on _reactive_. It takes a bit of work to be able to program reactively, create reactive systems. So is it worth it? Has it delivered on its promises?  
@@ -18,7 +18,7 @@ In practice it means that methods return reactive values. And you need to be abl
 So, as an IT manager, it's harder to find developers that are comfortable with all of that.  
 Given that it's hard to attract developers as it is, reactive really needs to be clearly worth it.   
 
-I'll just say it out loud: when I joined bol.com nobody cared about reactive programming. We weathered the season with blocking code end-to-end.  
+I'll just say it out loud: when I joined my team nobody cared about reactive programming. We weathered the season with blocking code end-to-end.  
 
 So does that mean reactive programming doesn't matter?  
 
